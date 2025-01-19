@@ -2,7 +2,7 @@ import pandas as pd
 import pickle
 
 # Load the model
-with open('test_case_priority_model.pkl', 'rb') as model_file:
+with open('model/test_case_priority_model.pkl', 'rb') as model_file:
     loaded_model = pickle.load(model_file)
 
 # Load new test case data
@@ -19,5 +19,5 @@ predictions = loaded_model.predict(new_test_cases[['defect_severity', 'code_cove
 
 # Save the predictions
 new_test_cases['priority'] = predictions
-new_test_cases.to_csv('predicted_test_cases.csv', index=False)
+new_test_cases.to_csv('predictions/predicted_test_cases.csv', index=False)
 print("Prediction successful")

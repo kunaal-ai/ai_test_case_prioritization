@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the predicted test cases dataset
-file_path = 'predicted_test_cases.csv'
+file_path = 'predictions/predicted_test_cases.csv'
 data = pd.read_csv(file_path)
 
 # Plot settings

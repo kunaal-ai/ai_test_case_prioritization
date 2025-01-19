@@ -9,7 +9,7 @@ import pickle
 #data = pd.read_excel(FILE_PATH)
 
 # if using CSV
-data = pd.read_csv("training_test_case_data_for_priority.csv")
+data = pd.read_csv("training/training_test_case_data_for_priority.csv")
 
 # Assuming 'defect_severity', 'code_coverage', and '
 # execution_result' as features
@@ -38,5 +38,5 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
 print(classification_report(y_test, y_pred))
 
 # Save the model to a file
-with open("test_case_priority_model.pkl", "wb") as model_file:
+with open("model/test_case_priority_model.pkl", "wb") as model_file:
     pickle.dump(model, model_file)

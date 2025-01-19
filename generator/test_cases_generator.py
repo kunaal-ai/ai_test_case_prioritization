@@ -16,7 +16,7 @@ new_data = {
 new_df = pd.DataFrame(new_data)
 
 # Save the new test cases dataset to a CSV file
-new_file_path = "new_test_cases.csv"
+new_file_path = "../new_test_cases.csv"
 new_df.to_csv(new_file_path, index=False)
 
 print(
