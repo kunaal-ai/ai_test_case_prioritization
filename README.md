@@ -1,5 +1,8 @@
 # ai_test_case_prioritization
-Using ML to analyze test cases to prioritize, saves so much manual hard work.
+Using ML to analyze test cases to prioritize, saves so much manual hard work. The machine learning algorithm I am using in this implementation is Random Forest. Random Forest combines multiple decision trees to make predictions. It works well for both classification and regression tasks.
+
+Response 
+Priority: 1 | 0  i.e: Yes | No
 
 # Used libraries
 - pandas 
