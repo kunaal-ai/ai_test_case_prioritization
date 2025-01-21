@@ -1,73 +1,142 @@
-# ai_test_case_prioritization
-Using ML to analyze test cases to prioritize, saves so much manual hard work. The machine learning algorithm I am using in this implementation is Random Forest. Random Forest combines multiple decision trees to make predictions. It works well for both classification and regression tasks.
+# AI Test Case Prioritization System
 
-Response 
-Priority: 1 | 0  i.e: Yes | No
+An intelligent system that uses machine learning to prioritize test cases based on multiple factors including defect severity, code coverage, and execution history.
 
-# Used libraries
-- pandas 
-- scikit-learn 
-- matplotlib 
-- seaborn
+![Application Preview](app_preview.png)
 
-```pip install pandas scikit-learn matplotlib seaborn```
+## 🌟 Features
 
-# Test Case Prioritization with Machine Learning
+### Core Functionality
+- **Test Case Prioritization**: Automatically assigns priority (0 or 1) to test cases
+- **Risk Assessment**: Calculates risk scores based on multiple factors
+- **Failure Pattern Detection**: Identifies sequences and patterns in test failures
+- **Coverage Analysis**: Visualizes and analyzes code coverage metrics
+- **Historical Trend Analysis**: Tracks test case performance over time
 
-## Overview
-This project uses a Random Forest machine learning model to predict and prioritize high-risk test cases based on test case execution history, defects found, and code coverage metrics. The model aims to help identify the most critical test cases for efficient and effective testing.
+### Analytics and Visualization
+- Interactive dashboards with Plotly charts
+- Real-time data processing and analysis
+- Comprehensive failure pattern detection
+- Risk score distribution analysis
+- Code coverage correlation analysis
 
-## Features
-- Collects and preprocesses test case data
-- Trains a Random Forest model to predict high-risk test cases
-- Evaluates model performance with precision, recall, and accuracy metrics
-- Provides visualization of predicted results
-- Supports automated model retraining with new data
+### Integration Features
+- JIRA issue tracking integration
+- Multiple export formats (CSV, Excel, JSON)
+- Historical data tracking
+- Easy-to-use file upload interface
 
-## Dataset
-The dataset includes the following columns:
-- `test_case_id`: Unique identifier for each test case
-- `execution_result`: The result of the test case (pass/fail)
-- `defect_severity`: Severity of the defect (low, medium, high)
-- `code_coverage`: Percentage of the code covered by the test case
+## 🚀 Getting Started
 
-Sample data format:
-```plaintext
-test_case_id,execution_result,defect_severity,code_coverage
-TC001,pass,high,85
-TC002,fail,medium,60
-TC003,pass,low,75
+### Prerequisites
+```bash
+Python 3.8+
+pip (Python package manager)
 ```
 
-## Installation
-Clone the repository:
+### Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/ai_test_case_prioritization.git
+cd ai_test_case_prioritization
+```
 
-`git clone https://github.com/your_username/your_repo_name.git
-cd your_repo_name`
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-## Install the required dependencies:
-```pip install -r requirements.txt```
+3. Train the model:
+```bash
+python train_new_model.py
+```
 
-# Usage
-**Train the Model**: ```sh python train_model.py```
+4. Run the application:
+```bash
+streamlit run streamlit_app.py
+```
 
-This script will:
-- Load and preprocess the dataset
-- Train the Random Forest model
-- Evaluate the model's performance
-- Save the trained model to ```test_case_priority_model.pkl```
+## 📊 Usage Guide
 
+### 1. Prepare Your Data
+Create a CSV file with the following columns:
+- `test_case_id`: Unique identifier for each test case
+- `execution_result`: Test result (pass/fail)
+- `defect_severity`: Severity level (low/medium/high)
+- `code_coverage`: Coverage percentage (0-100)
 
+Example:
+```csv
+test_case_id,execution_result,defect_severity,code_coverage
+TC001,pass,low,85
+TC002,fail,high,65
+TC003,pass,medium,90
+```
 
-**Predict New Test Cases:** ```sh python predict_test_cases.py```
+### 2. Using the Application
+1. Access the application at `http://localhost:8501`
+2. Upload your test cases CSV file
+3. View analysis across different tabs:
+   - Overview
+   - Coverage Analysis
+   - Failure Patterns
+   - Risk Assessment
+4. Export results in your preferred format
+5. Optionally integrate with JIRA for issue tracking
 
-This script will:
-- Load the trained model
-- Load new test case data
-- Preprocess the data and make predictions
-- Save the predictions to ```predicted_test_cases.csv```
+### 3. Understanding the Results
+- **Priority Scores**: 
+  - 0: Normal priority
+  - 1: High priority
+- **Risk Score**: 0-100 scale based on:
+  - Defect severity (40%)
+  - Code coverage (30%)
+  - Execution history (30%)
 
-# Future Enhancements
-- Integrate the model into a CI/CD pipeline using GitLab CI/CD
-- Implement active learning and incremental model updates
-- Explore more complex models like Gradient Boosting Machines (GBM) or Neural Networks
+## 🔧 Configuration
+
+### JIRA Integration
+1. In the sidebar, enter your JIRA credentials:
+   - JIRA URL
+   - Email
+   - API Token
+   - Project Key
+2. Click "Create JIRA Issues" for high-priority cases
+
+### Export Options
+- CSV: Complete dataset with predictions
+- Excel: Detailed worksheets with analysis
+- JSON: Structured data format
+- HTML: Interactive report
+
+## 📈 Features in Detail
+
+### Risk Assessment
+- Comprehensive risk scoring algorithm
+- Multiple factor analysis
+- Trend visualization
+- High-risk test case identification
+
+### Failure Pattern Detection
+- Sequential failure analysis
+- Pattern recognition
+- Severity-based failure rates
+- Historical trend analysis
+
+### Coverage Analysis
+- Distribution visualization
+- Severity correlation
+- Coverage impact analysis
+- Trend tracking
+
+### Historical Analysis
+- Performance tracking over time
+- Trend identification
+- Pattern recognition
+- Improvement metrics
+
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📧 Contact
+For questions and support, please open an issue in the GitHub repository.
