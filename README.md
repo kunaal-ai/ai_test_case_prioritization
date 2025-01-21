@@ -2,7 +2,7 @@
 
 An intelligent system that uses machine learning to prioritize test cases based on multiple factors including defect severity, code coverage, and execution history.
 
-![Application Preview](app_preview.png)
+![Application Preview](screen_shots/app_preview.png)
 
 ## 🌟 Features
 
@@ -26,6 +26,20 @@ An intelligent system that uses machine learning to prioritize test cases based 
 - Historical data tracking
 - Easy-to-use file upload interface
 
+## Code Tree
+```ai_test_case_prioritization/
+├── README.md                # Project documentation
+├── requirements.txt         # Dependencies
+├── streamlit_app.py        # Main Streamlit application
+├── train_new_model.py      # Model training script
+├── model/                  # Trained model storage
+│   └── test_case_priority_model.pkl
+├── data/                   # Data directory
+│   └── sample_test_cases.csv
+├── generator/              # Test case generation utilities
+│   ├── test_cases_generator.py
+│   └── training_dataSet_generator.py
+└── app_preview.png         # Application screenshot```
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -135,8 +149,19 @@ TC003,pass,medium,90
 - Pattern recognition
 - Improvement metrics
 
-## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Integration with JIRA
+- Issue creation for high-priority cases
+- Integration with JIRA for issue tracking
 
-## 📧 Contact
-For questions and support, please open an issue in the GitHub repository.
+### Export Options
+- CSV: Complete dataset with predictions
+- Excel: Detailed worksheets with analysis
+- JSON: Structured data format
+- HTML: Interactive report
+
+## Screenshots
+![Application Preview](screen_shots/app_preview.png)
+![Coverage Analysis](screen_shots/coverage_analysis.png)
+![Failure Patterns](screen_shots/failure_patterns.png)
+![Risk Assessment](screen_shots/risk_assessment.png)
+![Historical Analysis](screen_shots/historical_analysis.png)
