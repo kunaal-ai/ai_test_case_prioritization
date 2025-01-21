@@ -1,0 +1,6 @@
+test_case_id,execution_result,defect_severity,code_coverage
+TC001,pass,low,85
+TC002,fail,high,65
+TC003,pass,medium,92
+TC004,fail,medium,78
+TC005,pass,low,95

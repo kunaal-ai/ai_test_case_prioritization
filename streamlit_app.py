@@ -331,17 +331,37 @@ if page == "Welcome":
 elif page == "Test Case Analysis":
     st.markdown('<h1 class="main-header">Test Case Analysis</h1>', unsafe_allow_html=True)
     
-    # File upload or use existing data
-    if st.session_state.current_data is None:
-        uploaded_file = st.file_uploader("Upload your test cases CSV file", type=['csv'])
-    else:
-        col1, col2 = st.columns([3, 1])
-        with col1:
-            uploaded_file = st.file_uploader("Upload your test cases CSV file", type=['csv'])
-        with col2:
-            if st.button("Clear Current Data"):
-                st.session_state.current_data = None
-                st.experimental_rerun()
+    # File Upload Section
+    st.subheader("Upload Test Cases Data")
+    
+    # Add file format instructions
+    st.markdown("""
+    ### File Format Instructions
+    Please upload a CSV file with the following columns:
+    - `test_case_id`: Unique identifier for each test case (e.g., TC001)
+    - `execution_result`: Test execution outcome (pass/fail)
+    - `defect_severity`: Severity level of defects (low/medium/high)
+    - `code_coverage`: Code coverage percentage (numeric value between 50-100)
+    
+    Download our sample template to get started:
+    """)
+    
+    # Add sample template download button
+    sample_path = "data/samples/sample_test_cases_template.csv"
+    with open(sample_path, "r") as f:
+        csv_content = f.read()
+    b64_csv = base64.b64encode(csv_content.encode()).decode()
+    st.markdown(f"""
+        <a href="data:file/csv;base64,{b64_csv}" download="test_cases_template.csv" 
+           style="display: inline-block; padding: 0.5rem 1rem; 
+                  background-color: #4CAF50; color: white; 
+                  text-decoration: none; border-radius: 4px;
+                  margin-bottom: 1rem;">
+            📥 Download Template CSV
+        </a>
+    """, unsafe_allow_html=True)
+    
+    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
     
     # Process data
     df = None
@@ -591,17 +611,37 @@ elif page == "Settings":
 elif page == "Test Case Analysis":
     st.markdown('<h1 class="main-header">Test Case Analysis</h1>', unsafe_allow_html=True)
     
-    # File upload or use existing data
-    if st.session_state.current_data is None:
-        uploaded_file = st.file_uploader("Upload your test cases CSV file", type=['csv'])
-    else:
-        col1, col2 = st.columns([3, 1])
-        with col1:
-            uploaded_file = st.file_uploader("Upload your test cases CSV file", type=['csv'])
-        with col2:
-            if st.button("Clear Current Data"):
-                st.session_state.current_data = None
-                st.experimental_rerun()
+    # File Upload Section
+    st.subheader("Upload Test Cases Data")
+    
+    # Add file format instructions
+    st.markdown("""
+    ### File Format Instructions
+    Please upload a CSV file with the following columns:
+    - `test_case_id`: Unique identifier for each test case (e.g., TC001)
+    - `execution_result`: Test execution outcome (pass/fail)
+    - `defect_severity`: Severity level of defects (low/medium/high)
+    - `code_coverage`: Code coverage percentage (numeric value between 50-100)
+    
+    Download our sample template to get started:
+    """)
+    
+    # Add sample template download button
+    sample_path = "data/samples/sample_test_cases_template.csv"
+    with open(sample_path, "r") as f:
+        csv_content = f.read()
+    b64_csv = base64.b64encode(csv_content.encode()).decode()
+    st.markdown(f"""
+        <a href="data:file/csv;base64,{b64_csv}" download="test_cases_template.csv" 
+           style="display: inline-block; padding: 0.5rem 1rem; 
+                  background-color: #4CAF50; color: white; 
+                  text-decoration: none; border-radius: 4px;
+                  margin-bottom: 1rem;">
+            📥 Download Template CSV
+        </a>
+    """, unsafe_allow_html=True)
+    
+    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
     
     # Process data
     df = None
