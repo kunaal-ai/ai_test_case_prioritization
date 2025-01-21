@@ -160,8 +160,7 @@ TC003,pass,medium,90
 - HTML: Interactive report
 
 ## Screenshots
-![Application Preview](screen_shots/app_preview.png)
-![Coverage Analysis](screen_shots/coverage_analysis.png)
-![Failure Patterns](screen_shots/failure_patterns.png)
-![Risk Assessment](screen_shots/risk_assessment.png)
-![Historical Analysis](screen_shots/historical_analysis.png)
+![Coverage Analysis](screen_shots/code_coverage.png)
+![Failure Patterns](screen_shots/failure_pattern_analysis.png)
+![Risk Assessment](screen_shots/high_risk_test_cases.png)
+![Historical Analysis](screen_shots/historical_trends.png)
