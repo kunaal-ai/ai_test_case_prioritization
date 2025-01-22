@@ -393,9 +393,9 @@ elif page == "Test Case Analysis":
             df['code_coverage'] = pd.to_numeric(df['code_coverage'], errors='coerce')
             
             # Fill any missing values
-            df['code_coverage'].fillna(df['code_coverage'].mean(), inplace=True)
-            df['execution_result'].fillna('pass', inplace=True)
-            df['defect_severity'].fillna('low', inplace=True)
+            df['code_coverage'] = df['code_coverage'].fillna(df['code_coverage'].mean())
+            df['execution_result'] = df['execution_result'].fillna('pass')
+            df['defect_severity'] = df['defect_severity'].fillna('low')
             
             # Calculate risk scores
             df['risk_score'] = df.apply(calculate_risk_score, axis=1)
@@ -673,9 +673,9 @@ elif page == "Test Case Analysis":
             df['code_coverage'] = pd.to_numeric(df['code_coverage'], errors='coerce')
             
             # Fill any missing values
-            df['code_coverage'].fillna(df['code_coverage'].mean(), inplace=True)
-            df['execution_result'].fillna('pass', inplace=True)
-            df['defect_severity'].fillna('low', inplace=True)
+            df['code_coverage'] = df['code_coverage'].fillna(df['code_coverage'].mean())
+            df['execution_result'] = df['execution_result'].fillna('pass')
+            df['defect_severity'] = df['defect_severity'].fillna('low')
             
             # Calculate risk scores
             df['risk_score'] = df.apply(calculate_risk_score, axis=1)
